@@ -2,6 +2,7 @@ from flask import Flask
 
 from userinfo.userinfo import userinfo
 from blog.blog import blog
+from weather.weather import weather
 
 # [...] Initialize the app
 
@@ -20,6 +21,7 @@ app.config.from_pyfile('config.py')  # 从instance文件夹中加载配置
 def run():
     app.register_blueprint(userinfo, url_prefix='/userinfo')
     app.register_blueprint(blog, url_prefix='/blog')
+    app.register_blueprint(weather,url_prefix='/weather')
     app.run(host='0.0.0.0', debug=app.config['DEBUG'],port=8188)
 
 if __name__ == '__main__':
