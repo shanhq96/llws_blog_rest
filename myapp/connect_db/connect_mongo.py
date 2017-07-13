@@ -36,3 +36,7 @@ class ConnectMongoDB():
     def remove_all_data(self, collection):
         print('删除全部数据')
         return collection.remove()
+
+    def remove_one_data(self,collection,condition):
+        print('删除:%s条件:%s' % (collection, condition))
+        return collection.remove(condition)

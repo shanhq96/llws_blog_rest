@@ -1,8 +1,9 @@
 from flask import Flask
 
-from userinfo.userinfo import userinfo
-from blog.blog import blog
-from weather.weather import weather
+from views.blog import blog
+from views.comment import comment
+from views.userinfo import userinfo
+from views.weather import weather
 
 # [...] Initialize the app
 
@@ -22,6 +23,7 @@ def run():
     app.register_blueprint(userinfo, url_prefix='/userinfo')
     app.register_blueprint(blog, url_prefix='/blog')
     app.register_blueprint(weather,url_prefix='/weather')
+    app.register_blueprint(comment, url_prefix='/comment')
     app.run(host='0.0.0.0', debug=app.config['DEBUG'],port=8188)
 
 if __name__ == '__main__':
