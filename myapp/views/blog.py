@@ -80,6 +80,8 @@ def get_one_blog():
     response_data['title'] = result['title']
     response_data['update_time'] = result['update_time']
     response_data['content'] = result['content']
+    response_data['big_label_name'] = result['big_label_name']
+    response_data['small_label_name'] = result['small_label_name']
     response_data['is_collect'] = ObjectId(blog_id) in the_interests
     print({"status": True, "data": response_data})
     response = get_return_response(
